@@ -17,10 +17,8 @@ public class DataSeeder {
     CommandLineRunner initDatabase(CategoryRepository categoryRepository,
                                    ProductRepository productRepository) {
         return args -> {
-            // 1. Cek jika data sudah ada untuk menghindari duplikasi saat restart docker
             if (categoryRepository.count() == 0) {
 
-                // 2. Buat Dummy Categories
                 Category cat1 = new Category();
                 cat1.setName("Elektronik");
 
